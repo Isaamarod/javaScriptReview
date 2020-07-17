@@ -1,32 +1,12 @@
-//Classic mode
+import heroes, { otros } from './data/heroes';
 
-const characters = ['Marilyn', 'Paco Martinez Soria', 'Carmen Sevilla']
+const getHeroeById = (id) => heroes.find((element) => element.id===id);
+console.log (otros)
 
-
-console.log(characters[0]);
-
-
-const [,p2] =characters;
-
-console.log(p2)
-
-const [,,p3] =characters;
-
-console.log(p3)
-
-const reuturnArray = () => { return ['ABD',3];}
-
-const [a,b] = reuturnArray();
-console.log(a,b)
-
-//Tarea
-//1. the first position will be named name
-//2. the second position will be name setName
+console.log (getHeroeById(2))
 
 
-const useState = (valor) =>{
- return [valor, () => {return console.log('que pasa')}];
-}
-const [,setName] = useState('Goku');
+const getHeroeByOwner = (owner) => heroes.filter((element) => element.owner===owner);
+console.log (getHeroeByOwner('DC'))
 
-console.log(setName)
+
