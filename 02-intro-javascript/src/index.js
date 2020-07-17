@@ -1,79 +1,32 @@
-//Asignacion desestructurante
+//Classic mode
 
-  const person = {
-     name: 'Isa',
-     age:26,
-     pass:'hello',
-  };
+const characters = ['Marilyn', 'Paco Martinez Soria', 'Carmen Sevilla']
 
 
+console.log(characters[0]);
 
 
-  console.log(person.nombre);
-  console.log(person.age);
-  console.log(person.pass);
+const [,p2] =characters;
 
-  const person2 = {
-    name: 'Isa',
-    age:26,
-    pass:'hello',
-    role: 'Biomedical researcher',
- };
+console.log(p2)
 
+const [,,p3] =characters;
 
+console.log(p3)
 
-  const  {name,age,pass}=person2; //extract from person2 the name
+const reuturnArray = () => { return ['ABD',3];}
 
-  console.log(name,age,pass);
+const [a,b] = reuturnArray();
+console.log(a,b)
 
-  const returnPerson =(user) => {
-    const  {name,age,pass}=user;
-
-    console.log(name,age,pass);
-  }
-  returnPerson(person2)
-//Receive deestructuration from argument and default atb that doesn't exist
-
-const returnPerson2 =({name,edad,role}) => {
-   
-
-   console.log(name,age,role);
- }
- returnPerson2(person)
-
-//Receive deestructuration from argument and default atb that exist
-
- const returnPerson3 =({name,edad,role='Researcher'}) => {
-   
-
-   console.log(name,edad,role);
- }
- returnPerson3(person2)
+//Tarea
+//1. the first position will be named name
+//2. the second position will be name setName
 
 
+const useState = (valor) =>{
+ return [valor, () => {return console.log('que pasa')}];
+}
+const [,setName] = useState('Goku');
 
- const returnPerson4 =({name,edad,role}) => {
-   
-
-   return{
-      nombreClave: pass,
-      anios: age,
-      position:{
-         lat:12.345,
-         long:89.56
-      }
-   }
- }
-
- const avenger = returnPerson4 (person2);
-
- console.log(avenger)
-
-// const {nombreClave,anios,position:{lat}} = returnPerson4 (person2);
- const {nombreClave,anios,position} = returnPerson4 (person2);
-
- const {lat,long} = position;
-
-
- console.log(nombreClave,anios,position);
- console.log(lat,long);
+console.log(setName)
