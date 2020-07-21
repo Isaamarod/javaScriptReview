@@ -1,18 +1,17 @@
+const activo = true;
+const activo2 = true;
+// Los operadores ternarios siempre esperan la condicion del else
+
+//Primero la condicion
+//?
+//La condicion cuando se cumple
+//El caso contrario
+const mensaje = (activo) ? 'Activo' : 'Inactivo';
+//Y si no quiero hacer nada en caso de no cumplir la condicion?
+//Forma corta de hacer un if
+const mensaje2 = activo2 && 'Activo';
 
 
+console.log(mensaje);
 
-const getImage = async() => {
 
-    const apiKey = 'cY7tIblMYNznGWmah9MHjKqKTY9HSdyI'
-
-    const request = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`)
-
-    const {data} = await request.json();
-
-    const {url} = data.images.original;
-    const imag = document.createElement('img');
-    imag.src = url;
-    document.body.append(imag);
-}
-
-getImage();
